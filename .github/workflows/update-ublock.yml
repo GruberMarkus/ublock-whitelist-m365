@@ -1,0 +1,41 @@
+name: Update M365 uBlock List
+
+on:
+  schedule:
+    - cron: '0 */5 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get M365 Endpoints and create uBlock list
+        run: |
+          GUID=$(uuidgen)
+          echo "Generated GUID: $GUID"
+          
+          ENDPOINTS_JSON=$(curl -s "https://endpoints.office.com/endpoints/worldwide?clientrequestid=$GUID")
+          
+          # Initialize the uBlock filter list file
+          echo "! uBlock Origin filter list for Microsoft 365 endpoints" > ublock-m365.txt
+          echo "! Generated on $(date)" >> ublock-m365.txt
+          echo "" >> ublock-m365.txt
+          
+          # Extract and format URLs
+          echo "$ENDPOINTS_JSON" | jq -r '
+            .[] |
+            .urls? |
+            .[]? |
+            "@@||" + . + "^"
+          ' >> ublock-m365.txt
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add ublock-m365.txt
+          git commit -m "chore: Update M365 uBlock list" || echo "No changes to commit."
+          git push
