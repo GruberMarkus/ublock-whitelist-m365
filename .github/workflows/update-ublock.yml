@@ -22,23 +22,28 @@ jobs:
           
           ENDPOINTS_JSON=$(curl -s "https://endpoints.office.com/endpoints/worldwide?clientrequestid=$GUID")
           
-          # Initialize the uBlock filter list file
-          echo "! uBlock Origin filter list for Microsoft 365 endpoints" > ublock-m365.txt
-          echo "! Generated on $(date)" >> ublock-m365.txt
-          echo "" >> ublock-m365.txt
+          # Initialize the uBlock filter list with metadata
+          echo "! Title: Microsoft 365 URL Whitelist" > ublock-whitelist-m365.txt
+          echo "! Version: $(date +%Y%m%d%H%M)" >> ublock-whitelist-m365.txt
+          echo "! Filter list description: This filter list contains all known URLs for Microsoft 365 services, unblocking them in uBlock Origin." >> ublock-whitelist-m365.txt
+          echo "! Expires: 24 hours" >> ublock-whitelist-m365.txt
+          echo "! Homepage: https://github.com/${{ github.repository }}" >> ublock-whitelist-m365.txt
+          echo "! Source: https://endpoints.office.com/endpoints/worldwide" >> ublock-whitelist-m365.txt
+          echo "! Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> ublock-whitelist-m365.txt
+          echo "" >> ublock-whitelist-m365.txt
           
-          # Extract and format URLs
+          # Extract and format URLs, then sort them
           echo "$ENDPOINTS_JSON" | jq -r '
             .[] |
             .urls? |
             .[]? |
             "@@||" + . + "^"
-          ' >> ublock-m365.txt
+          ' | sort -t. -k1,1r -k2 | sort -s -k2 >> ublock-whitelist-m365.txt
 
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ublock-m365.txt
+          git add ublock-whitelist-m365.txt
           git commit -m "chore: Update M365 uBlock list" || echo "No changes to commit."
           git push
