@@ -2,7 +2,7 @@
 
 ![Workflow Status](https://img.shields.io/github/actions/workflow/status/GruberMarkus/ublock-whitelist-m365/update-ublock.yml)
 [![Last Commit](https://img.shields.io/github/last-commit/GruberMarkus/ublock-whitelist-m365)](https://github.com/GruberMarkus/ublock-whitelist-m365/commits/main)
-[![License](https://img.shields.io/github/license/GruberMarkus/ublock-whitelist-m365)](https://github.com/GruberMarkus/ublock-whitelist-m365/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/GruberMarkus/ublock-whitelist-m365)](https://github.com/GruberMarkus/ublock-whitelist-m365/blob/main/LICENSE.txt)
 [![Repo Size](https://img.shields.io/github/repo-size/GruberMarkus/ublock-whitelist-m365)](https://github.com/GruberMarkus/ublock-whitelist-m365)
 [![Stars](https://img.shields.io/github/stars/GruberMarkus/ublock-whitelist-m365?style=social)](https://github.com/GruberMarkus/ublock-whitelist-m365/stargazers)
 
