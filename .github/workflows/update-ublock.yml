@@ -2,7 +2,7 @@ name: Update M365 uBlock List
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */5 * * *'
   workflow_dispatch:
 
 permissions:
