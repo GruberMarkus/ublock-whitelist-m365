@@ -27,6 +27,7 @@ jobs:
           echo "! Version: $(date +%Y%m%d%H%M)" >> ublock-whitelist-m365.txt
           echo "! Filter list description: This filter list contains all known URLs for Microsoft 365 services, unblocking them in uBlock Origin." >> ublock-whitelist-m365.txt
           echo "! Expires: 24 hours" >> ublock-whitelist-m365.txt
+          echo "! URL: https://raw.githubusercontent.com/GruberMarkus/ublock-whitelist-m365/main/ublock-whitelist-m365.txt" >> ublock-whitelist-m365.txt
           echo "! Homepage: https://github.com/${{ github.repository }}" >> ublock-whitelist-m365.txt
           echo "! Source: https://endpoints.office.com/endpoints/worldwide" >> ublock-whitelist-m365.txt
           echo "! Last Updated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> ublock-whitelist-m365.txt
