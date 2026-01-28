@@ -1,11 +1,11 @@
 ! Title: Microsoft 365 URL Whitelist
-! Version: 202601280512
+! Version: 202601281008
 ! Filter list description: This filter list contains all known URLs for Microsoft 365 services, unblocking them in uBlock Origin.
 ! Expires: 24 hours
 ! URL: https://raw.githubusercontent.com/GruberMarkus/ublock-whitelist-m365/main/ublock-whitelist-m365.txt
 ! Homepage: https://github.com/GruberMarkus/ublock-whitelist-m365
 ! Source: https://endpoints.office.com/endpoints/worldwide
-! Last Updated: 2026-01-28T05:12:02Z
+! Last Updated: 2026-01-28T10:08:44Z
 
 @@||www.acompli.com^
 @@||www.bing.com^
