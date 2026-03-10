@@ -1,11 +1,11 @@
 ! Title: Microsoft 365 URL Whitelist (All Instances)
-! Version: 202603092010
+! Version: 202603100028
 ! Filter list description: This filter list contains URLs for all M365 instances (Worldwide, China, USGov, etc.)
 ! Expires: 24 hours
 ! URL: https://raw.githubusercontent.com/GruberMarkus/ublock-whitelist-m365/main/ublock-whitelist-m365.txt
 ! Homepage: https://github.com/GruberMarkus/ublock-whitelist-m365
 ! Source: https://endpoints.office.com/version
-! Last Updated: 2026-03-09T20:10:40Z
+! Last Updated: 2026-03-10T00:28:38Z
 
 @@||*.aadrm.cn^
 @@||*.aadrm.com^
