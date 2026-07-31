@@ -1,11 +1,11 @@
 ! Title: Microsoft 365 URL Whitelist (All Instances)
-! Version: 202607310749
+! Version: 202607311159
 ! Filter list description: This filter list contains URLs for all M365 instances (Worldwide, China, USGov, etc.)
 ! Expires: 24 hours
 ! URL: https://raw.githubusercontent.com/GruberMarkus/ublock-whitelist-m365/main/ublock-whitelist-m365.txt
 ! Homepage: https://github.com/GruberMarkus/ublock-whitelist-m365
 ! Source: https://endpoints.office.com/version
-! Last Updated: 2026-07-31T07:49:43Z
+! Last Updated: 2026-07-31T11:59:57Z
 
 @@||*.aadrm.cn^
 @@||*.aadrm.com^
@@ -26,7 +26,6 @@
 @@||*.cdn.office.net^
 @@||*.chinacloud-mobile.cn^
 @@||*.chinacloudapi.cn^
-@@||*.cloud.microsoft^
 @@||*.cortana.ai^
 @@||*.dod.online.office365.us^
 @@||*.dod.teams.microsoft.us^
@@ -125,7 +124,6 @@
 @@||*.sovcloud.cn^
 @@||*.sovcloud.de^
 @@||*.sovcloud.fr^
-@@||*.static.microsoft^
 @@||*.streaming.mediaservices.windows.net^
 @@||*.svc.ms^
 @@||*.symcb.com^
@@ -133,7 +131,6 @@
 @@||*.teams.cloud.microsoft^
 @@||*.teams.microsoft.com^
 @@||*.teams.microsoftonline.cn^
-@@||*.usercontent.microsoft^
 @@||*.usgovcloud-mx.microsoft^
 @@||*.usgovcloud-static.microsoft^
 @@||*.usgovcloud-usercontent.microsoft^
